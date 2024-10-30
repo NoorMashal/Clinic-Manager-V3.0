@@ -1,0 +1,458 @@
+/* @author Noor Mashal */
+/* Background of the whole application */
+.wholeBack {
+    -fx-background-color: #132237;
+}
+.tab-pane {
+    -fx-background-color: #132237;
+}
+
+/* Context menu items */
+.context-menu .menu-item .label {
+    -fx-text-fill: #1cbaac; /* Replace with your desired color */
+}
+
+
+/* Title label styling */
+.label {
+    -fx-text-fill: #1cbaac;
+    -fx-font-weight: SEMI_BOLD;
+}
+.radio-button {
+    -fx-text-fill: #1cbaac;      /* Change text color */
+}
+.radio-button:selected .radio .dot {
+    -fx-background-color: #e76f51;
+    -fx-background-insets: 0;
+}
+.radio-button .radio {
+    -fx-background-color: #132237; /* Change for the selected state */
+    -fx-border-color: #1cbaac;
+    -fx-border-radius: 15px; /* Match the border radius to the background radius */
+}
+
+
+
+/* Background of TextArea and general text styles */
+.output-area, .text-field {
+    -fx-background-color: #132237;
+    -fx-control-inner-background: #132237;
+    -fx-text-fill: #ecddc8;
+    -fx-font-family: "Verdana";
+    -fx-font-weight: SEMI_BOLD;
+    -fx-font-smoothing-type: LCD;
+    -fx-prompt-text-fill: #ecddc8;
+}
+
+
+.output-area, .text-field, .content {
+    -fx-background-radius: 0;
+}
+
+.output-area {
+    -fx-border-color: #264653;
+    -fx-border-width: 2px;
+}
+
+
+.output-area:focused .content {
+    -fx-background-color: #132237;
+    -fx-background-insets: 0;
+}
+
+/* Command input border styling */
+.text-field {
+    -fx-border-color: #264653;
+    -fx-border-width: 2px;
+}
+
+.text-field:hover, .text-field:focused {
+    -fx-control-inner-background: #264653;
+    -fx-background-color: #264653;
+    -fx-border-width: 2px;
+}
+.text-field {
+    -fx-border-color: #264653;
+    -fx-border-width: 2px;
+}
+
+.text-field:hover, .text-field:focused {
+    -fx-control-inner-background: #264653;
+    -fx-background-color: #264653;
+    -fx-border-width: 2px;
+}
+
+.date-picker {
+    -fx-background-color: #264653; /* Main background color */
+    -fx-border-color: #264653; /* Border color */
+    -fx-padding: 0; /* Remove padding if needed */
+}
+
+/* Styles for the DatePicker arrow button */
+.date-picker .arrow-button {
+    -fx-background-color: #264653; /* Background for button */
+}
+
+.date-picker .arrow-button .arrow {
+    -fx-background-color: #1cbaac; /* Teal color for arrow */
+}
+
+.date-picker .arrow-button:hover .arrow {
+    -fx-background-color: #ecddc8; /* Light color on hover for better visibility */
+}
+
+/* Styles for the DatePicker popup */
+.date-picker-popup {
+    -fx-background-color: #264653; /* Popup background color */
+}
+
+.date-picker-popup .month-year-pane {
+    -fx-background-color: #1d3541; /* Slightly darker shade for contrast */
+}
+
+.date-picker-popup .month-year-pane .label {
+    -fx-text-fill: #ecddc8; /* Light color for month/year text */
+}
+
+/* Style for the days of the week header */
+.date-picker-popup .calendar-grid .day-header {
+    -fx-text-fill: #ecddc8; /* Light color for days of the week header */
+}
+
+/* Style for week number cells */
+.date-picker-popup .week-number-cell {
+    -fx-text-fill: #1cbaac; /* Color for week numbers */
+}
+
+/* Style for calendar grid and day cells */
+.date-picker-popup .calendar-grid {
+    -fx-background-color: #264653; /* Calendar grid background color */
+}
+
+.date-picker-popup .calendar-grid .day-cell {
+    -fx-background-color: #264653; /* Background color for day cells */
+    -fx-text-fill: #ecddc8; /* Text color for day cells */
+}
+
+.date-picker-popup .calendar-grid .day-cell:hover {
+    -fx-background-color: #1d3541; /* Hover effect for day cells */
+}
+
+.date-picker-popup .calendar-grid .day-cell.selected {
+    -fx-background-color: #1cbaac; /* Background color for selected day */
+    -fx-text-fill: #264653; /* Text color for selected day */
+}
+
+.date-picker-popup .calendar-grid .day-cell:focused {
+    -fx-background-color: #1cbaac; /* Focused state background color */
+    -fx-text-fill: #264653; /* Focused state text color */
+}
+
+/* Styles for spinner buttons in popup */
+.date-picker-popup .spinner .button {
+    -fx-background-color: #1d3541;
+}
+
+.date-picker-popup .spinner .button:hover {
+    -fx-background-color: #1cbaac;
+}
+
+.date-picker-popup .spinner .button .left-arrow,
+.date-picker-popup .spinner .button .right-arrow {
+    -fx-background-color: #ecddc8;
+}
+.date-picker-popup .calendar-grid .day-header {
+    -fx-text-fill: #ecddc8; /* Light color for days of the week header */
+}
+.date-picker-popup .calendar-grid .day-cell {
+    -fx-text-fill: #ecddc8; /* Text color for day cells, ensuring they are not black */
+}
+
+.combo-box {
+    -fx-background-color: #132237;
+    -fx-border-color: #264653;
+    -fx-border-radius: 5px;
+    -fx-border-width: 2px;
+}
+
+/* This will change the text color for the selected item displayed in the ComboBox */
+.combo-box .list-cell:filled:selected {
+    -fx-text-fill: #ecddc8;
+}
+
+/* Arrow button styling */
+.combo-box .arrow-button .arrow {
+    -fx-background-color: #1cbaac;
+}
+
+/* Popup window styling */
+.combo-box .list-view {
+    -fx-background-color: #132237;
+}
+
+/* Items in the dropdown list */
+.combo-box .list-cell {
+    -fx-text-fill: #ecddc8;
+    -fx-background-color: #132237;
+}
+
+/* Hovered item in the dropdown */
+.combo-box .list-view .list-cell:hover {
+    -fx-background-color: #264653;
+}
+
+/* Prompt text (displayed when no item is selected) */
+.combo-box .prompt-text {
+    -fx-text-fill: #1cbaac;
+}
+
+/* Ensure text is visible when an item is selected */
+.combo-box:showing > .list-cell {
+    -fx-text-fill: #ecddc8;
+}
+
+/* Focus state */
+.combo-box:focused {
+    -fx-border-color: #1cbaac;
+}
+
+/* Scrollbar styling */
+.combo-box .scroll-bar {
+    -fx-background-color: #264653; /* Background color of the scrollbar */
+}
+
+.combo-box .scroll-bar:vertical {
+    -fx-pref-width: 10; /* Width of the vertical scrollbar */
+}
+
+.combo-box .scroll-bar:horizontal {
+    -fx-pref-height: 10; /* Height of the horizontal scrollbar */
+}
+
+.combo-box .scroll-bar .thumb {
+    -fx-background-color: #1cbaac; /* Color of the scrollbar thumb */
+}
+
+.combo-box .scroll-bar .track {
+    -fx-background-color: #264653; /* Color of the scrollbar track */
+}
+
+/* Submit button styling */
+.button {
+    -fx-background-color: #132237;
+    -fx-text-fill: #1cbaac;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8px; /* Match border radius */
+    -fx-border-width: 4px;
+    -fx-border-color: #1cbaac;
+    -fx-border-radius: 8px;
+    -fx-effect: dropshadow(three-pass-box, rgba(28, 186, 172, 0), 0, 0, 0, 0);
+}
+
+.button:hover {
+    -fx-background-color: #1cbaac;
+    -fx-text-fill: #ecddc8;
+    -fx-effect: dropshadow(three-pass-box, rgba(28, 186, 172, 0.5), 10, 0, 0, 0);
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-cursor: hand;
+}
+
+.button:pressed {
+    -fx-opacity: 0.8;
+    -fx-effect: dropshadow(three-pass-box, rgba(28, 186, 172, 0.3), 5, 0, 0, 0);
+}
+
+/* ScrollBar styling */
+.scroll-bar {
+    -fx-background-color: #264653;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: #2a9d8f;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #e76f51;
+    -fx-background-radius: 1px;
+}
+
+.scroll-bar .track {
+    -fx-background-color: #264653;
+}
+
+.scroll-bar:hover .thumb {
+    -fx-background-color: #f4a261;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-pref-width: 8px;
+}
+
+.scroll-bar:horizontal .thumb {
+    -fx-pref-height: 8px;
+}
+
+.scroll-bar:vertical .track {
+    -fx-pref-width: 8px;
+}
+
+.scroll-bar:horizontal .track {
+    -fx-pref-height: 8px;
+}
+
+.scroll-pane > .corner,
+.scroll-pane > .viewport > .corner,
+.text-area .content > .corner,
+.text-area > .scroll-pane > .corner {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-padding: 0;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-shape: " ";
+    -fx-padding: 0;
+}
+/* Style for the DatePicker popup */
+.date-picker-popup {
+    -fx-background-color: #264653;
+}
+
+/* Style for the month-year pane */
+.date-picker-popup .month-year-pane {
+    -fx-background-color: #1d3541;
+}
+
+.date-picker-popup .month-year-pane .label {
+    -fx-text-fill: #ecddc8;
+}
+
+/* New style for the day title (weekday names) */
+.date-picker-popup .calendar-grid .day-name-cell {
+    -fx-text-fill: #1cbaac; /* Use your theme's accent color */
+}
+
+/* Existing styles for day cells... */
+
+.date-picker-popup .calendar-grid .day-cell {
+    -fx-background-color: #264653;
+    -fx-text-fill: #ecddc8;
+}
+
+/* TabPane overall styling */
+.tab-pane {
+    -fx-background-color: #132237;
+    -fx-border-color: #1cbaac;
+    -fx-border-width: 1 0 0 0;
+}
+
+/* Tab header area styling */
+.tab-pane > .tab-header-area {
+    -fx-background-color: #264653;
+}
+
+.tab-pane > .tab-header-area > .tab-header-background {
+    -fx-background-color: #264653;
+}
+
+/* Individual tab styling */
+.tab-pane .tab {
+    -fx-background-color: #132237;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-border-color: #1cbaac;
+    -fx-border-width: 1 1 0 1;
+}
+
+/* Tab label styling */
+.tab-pane .tab .tab-label {
+    -fx-text-fill: #1cbaac;
+}
+
+/* Selected tab styling */
+.tab-pane .tab:selected {
+    -fx-background-color: #1cbaac;
+}
+
+.tab-pane .tab:selected .tab-label {
+    -fx-text-fill: #132237;
+}
+
+/* Remove focus indicator */
+.tab-pane:focused > .tab-header-area > .headers-region > .tab:selected .focus-indicator {
+    -fx-border-color: transparent;
+}
+
+/* Content area styling */
+.tab-pane > .tab-content-area {
+    -fx-background-color: #132237;
+    -fx-border-width: 0;
+}
+/* TableView styling */
+.table-view {
+    -fx-background-color: #132237;
+    -fx-table-cell-border-color: #264653;
+}
+
+/* Table header styling */
+.table-view .column-header-background {
+    -fx-background-color: #264653;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: #264653;
+    -fx-border-color: #1cbaac;
+    -fx-border-width: 0 1 1 0;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #1cbaac;
+    -fx-font-weight: bold;
+}
+
+/* Table row styling */
+.table-row-cell {
+    -fx-background-color: #1d3541; /* Lighter shade for better contrast */
+    -fx-text-fill: #ecddc8;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #264653; /* Even lighter shade for odd rows */
+}
+
+/* Focused cell styling */
+.table-row-cell:focused .table-cell {
+    -fx-background-color: #1cbaac; /* Your theme's accent color */
+    -fx-text-fill: #132237; /* Dark text color for contrast */
+}
+
+/* Table cell styling */
+.table-cell {
+    -fx-text-fill: #ecddc8; /* Light text color for better visibility */
+    -fx-border-color: #264653;
+    -fx-border-width: 0 1 0 0;
+    -fx-padding: 2 5 2 5;
+}
+.table-cell:selected {
+    -fx-text-fill: #ffffff; /* Light text color for better visibility */
+    -fx-border-color: #264653;
+    -fx-border-width: 0 1 0 0;
+    -fx-padding: 2 5 2 5;
+}
+.output-area .prompt-text {
+    -fx-prompt-text-fill: #1cbaac; /* Use your theme's accent color */
+}
+.custom-grid-pane {
+    -fx-border-color: #264653; /* Change this to your desired outer border color */
+    -fx-border-width: 2;
+    -fx-border-style: solid;
+}

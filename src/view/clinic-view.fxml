@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="571.0" prefWidth="462.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ClinicManagerController">
+   <bottom>
+      <TextArea fx:id="outputArea" editable="false" prefHeight="199.0" prefWidth="678.0" promptText="Output..." styleClass="output-area" BorderPane.alignment="CENTER" />
+   </bottom>
+   <top>
+      <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="419.0" prefWidth="665.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Schedule">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="391.0" prefWidth="678.0">
+                     <children>
+                        <GridPane alignment="TOP_CENTER" prefHeight="393.0" prefWidth="678.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="508.0" minWidth="10.0" prefWidth="113.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="541.0" minWidth="4.0" prefWidth="377.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="565.0" minWidth="10.0" prefWidth="188.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="136.0" minHeight="10.0" prefHeight="112.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="189.0" minHeight="10.0" prefHeight="109.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="131.0" minHeight="10.0" prefHeight="125.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="20.0" GridPane.columnIndex="2">
+                                 <children>
+                                    <Button fx:id="resetInput" onAction="#handleReset" prefHeight="52.0" prefWidth="139.0" styleClass="submit-button" text="Reset">
+                                       <VBox.margin>
+                                          <Insets top="32.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="25.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <children>
+                                    <Button fx:id="scheduleApt" onAction="#handleSchedule" prefHeight="52.0" prefWidth="340.0" styleClass="submit-button" text="Schedule">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <VBox prefHeight="122.0" prefWidth="387.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <children>
+                                    <TextField fx:id="firstName" prefHeight="25.0" prefWidth="338.0">
+                                       <VBox.margin>
+                                          <Insets right="30.0" />
+                                       </VBox.margin></TextField>
+                                    <TextField fx:id="lastName" prefHeight="25.0" prefWidth="350.0">
+                                       <VBox.margin>
+                                          <Insets right="30.0" />
+                                       </VBox.margin></TextField>
+                                    <DatePicker fx:id="dob" prefHeight="25.0" prefWidth="172.0" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0" spacing="15.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label prefHeight="21.0" prefWidth="58.0" text="First Name" />
+                                    <Label prefHeight="20.0" prefWidth="56.0" text="Last Name" />
+                                    <Label prefHeight="30.0" prefWidth="68.0" text="Date of Birth" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER_RIGHT" prefHeight="121.0" prefWidth="113.0" spacing="21.0">
+                                 <children>
+                                    <Label prefHeight="17.0" prefWidth="102.0" text="Appointment Type">
+                                       <VBox.margin>
+                                          <Insets left="7.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label prefHeight="12.0" prefWidth="101.0" text="Appointment Date">
+                                       <padding>
+                                          <Insets bottom="7.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                                 <GridPane.margin>
+                                    <Insets top="10.0" />
+                                 </GridPane.margin>
+                                 <opaqueInsets>
+                                    <Insets top="20.0" />
+                                 </opaqueInsets>
+                              </VBox>
+                              <HBox GridPane.columnIndex="1">
+                                 <children>
+                                    <VBox prefHeight="114.0" prefWidth="389.0" spacing="5.0">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="180.0" spacing="29.0">
+                                             <children>
+                                                <RadioButton fx:id="office" mnemonicParsing="false" text="Office" />
+                                                <RadioButton fx:id="imaging" mnemonicParsing="false" text="Imaging" />
+                                                <ComboBox fx:id="providerImagingDrop" prefHeight="31.0" prefWidth="144.0" promptText="Provider/Service">
+                                                   <HBox.margin>
+                                                      <Insets left="10.0" />
+                                                   </HBox.margin>
+                                                </ComboBox>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets left="2.0" top="20.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox prefHeight="25.0" prefWidth="271.0" spacing="20.0">
+                                             <children>
+                                                <DatePicker fx:id="aptDate" prefHeight="25.0" prefWidth="172.0">
+                                                   <opaqueInsets>
+                                                      <Insets />
+                                                   </opaqueInsets>
+                                                </DatePicker>
+                                                <ComboBox fx:id="timeslotDrop" prefHeight="25.0" prefWidth="145.0" promptText="Timeslot" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets top="10.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <Button fx:id="clearOutput" onAction="#handleClear" prefHeight="52.0" prefWidth="139.0" styleClass="submit-button" text="Clear" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Button fx:id="loadProviders" onAction="#handleLoad" prefHeight="52.0" prefWidth="139.0" styleClass="submit-button" text="Load Providers" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Cancel">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane alignment="TOP_CENTER" prefHeight="393.0" prefWidth="678.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="508.0" minWidth="10.0" prefWidth="113.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="541.0" minWidth="4.0" prefWidth="377.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="565.0" minWidth="10.0" prefWidth="188.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="136.0" minHeight="10.0" prefHeight="112.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="189.0" minHeight="10.0" prefHeight="109.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="131.0" minHeight="10.0" prefHeight="125.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="20.0" GridPane.columnIndex="2">
+                                 <children>
+                                    <Button fx:id="resetInputC" onAction="#handleResetC" prefHeight="52.0" prefWidth="139.0" styleClass="submit-button" text="Reset">
+                                       <VBox.margin>
+                                          <Insets top="32.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="151.0" prefWidth="377.0" spacing="25.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <children>
+                                    <Button fx:id="cancelApt" onAction="#handleCancel" prefHeight="52.0" prefWidth="340.0" styleClass="submit-button" text="Cancel">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <VBox prefHeight="122.0" prefWidth="387.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <children>
+                                    <TextField fx:id="firstNameC" prefHeight="25.0" prefWidth="274.0">
+                                       <VBox.margin>
+                                          <Insets right="30.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <TextField fx:id="lastNameC" prefHeight="25.0" prefWidth="350.0">
+                                       <VBox.margin>
+                                          <Insets right="30.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <DatePicker fx:id="dobC" prefHeight="29.0" prefWidth="172.0" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox alignment="CENTER_RIGHT" spacing="21.0">
+                                 <children>
+                                    <Label prefHeight="12.0" prefWidth="101.0" text="Appointment Date">
+                                       <padding>
+                                          <Insets bottom="7.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                                 <GridPane.margin>
+                                    <Insets top="32.0" />
+                                 </GridPane.margin>
+                                 <opaqueInsets>
+                                    <Insets top="20.0" />
+                                 </opaqueInsets>
+                              </VBox>
+                              <HBox GridPane.columnIndex="1">
+                                 <children>
+                                    <VBox prefHeight="114.0" prefWidth="389.0" spacing="5.0">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="117.0" prefWidth="387.0" spacing="20.0">
+                                             <children>
+                                                <DatePicker fx:id="aptDateC" prefHeight="25.0" prefWidth="172.0">
+                                                   <opaqueInsets>
+                                                      <Insets />
+                                                   </opaqueInsets>
+                                                </DatePicker>
+                                                <ComboBox fx:id="timeslotDropC" prefHeight="25.0" prefWidth="145.0" promptText="Timeslot" />
+                                             </children>
+                                             <padding>
+                                                <Insets top="30.0" />
+                                             </padding>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets top="10.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <Button fx:id="clearOutputC" onAction="#handleClear" prefHeight="52.0" prefWidth="139.0" styleClass="submit-button" text="Clear" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Button fx:id="loadProvidersC" onAction="#handleLoad" prefHeight="52.0" prefWidth="139.0" styleClass="submit-button" text="Load Providers" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0" spacing="15.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label prefHeight="21.0" prefWidth="58.0" text="First Name" />
+                                    <Label prefHeight="21.0" prefWidth="56.0" text="Last Name" />
+                                    <Label prefHeight="29.0" prefWidth="68.0" text="Date of Birth" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </GridPane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Reschedule">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane alignment="TOP_CENTER" prefHeight="393.0" prefWidth="678.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="508.0" minWidth="10.0" prefWidth="113.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="541.0" minWidth="4.0" prefWidth="377.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="565.0" minWidth="10.0" prefWidth="188.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="136.0" minHeight="10.0" prefHeight="112.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="189.0" minHeight="10.0" prefHeight="109.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="131.0" minHeight="10.0" prefHeight="125.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="20.0" GridPane.columnIndex="2">
+                                 <children>
+                                    <Button fx:id="resetInputR" onAction="#handleResetR" prefHeight="52.0" prefWidth="139.0" styleClass="submit-button" text="Reset">
+                                       <VBox.margin>
+                                          <Insets top="32.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                              <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="25.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <children>
+                                    <Button fx:id="rescheduleApt" onAction="#handleReschedule" prefHeight="52.0" prefWidth="340.0" styleClass="submit-button" text="Reschedule">
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <VBox prefHeight="122.0" prefWidth="387.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <children>
+                                    <TextField fx:id="firstNameR" prefHeight="25.0" prefWidth="338.0">
+                                       <VBox.margin>
+                                          <Insets right="30.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <TextField fx:id="lastNameR" prefHeight="25.0" prefWidth="350.0">
+                                       <VBox.margin>
+                                          <Insets right="30.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <DatePicker fx:id="dobR" prefHeight="29.0" prefWidth="172.0" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </VBox>
+                              <VBox alignment="TOP_RIGHT">
+                                 <children>
+                                    <Label prefHeight="44.0" prefWidth="102.0" text="Appointment Date">
+                                       <VBox.margin>
+                                          <Insets left="7.0" />
+                                       </VBox.margin>
+                                       <padding>
+                                          <Insets bottom="10.0" />
+                                       </padding>
+                                    </Label>
+                                    <Label prefHeight="31.0" prefWidth="29.0" text="From">
+                                       <padding>
+                                          <Insets bottom="7.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                                 <GridPane.margin>
+                                    <Insets top="32.0" />
+                                 </GridPane.margin>
+                                 <opaqueInsets>
+                                    <Insets top="20.0" />
+                                 </opaqueInsets>
+                              </VBox>
+                              <HBox GridPane.columnIndex="1">
+                                 <children>
+                                    <VBox prefHeight="114.0" prefWidth="389.0" spacing="5.0">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="41.0" prefWidth="386.0" spacing="29.0">
+                                             <children>
+                                                <DatePicker fx:id="aptDateR" prefHeight="25.0" prefWidth="172.0">
+                                                   <opaqueInsets>
+                                                      <Insets />
+                                                   </opaqueInsets>
+                                                </DatePicker>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets top="20.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox prefHeight="25.0" prefWidth="181.0" spacing="4.0">
+                                             <children>
+                                                <ComboBox fx:id="timeslotDropR1" prefHeight="25.0" prefWidth="145.0" promptText="Timeslot" />
+                                                <Label prefHeight="21.0" prefWidth="30.0" text="To">
+                                                   <HBox.margin>
+                                                      <Insets left="8.0" top="4.0" />
+                                                   </HBox.margin>
+                                                   <padding>
+                                                      <Insets bottom="4.0" left="10.0" />
+                                                   </padding>
+                                                </Label>
+                                                <ComboBox fx:id="timeslotDropR2" prefHeight="25.0" prefWidth="145.0" promptText="Timeslot" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets top="10.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <Button fx:id="clearOutputR" onAction="#handleClear" prefHeight="52.0" prefWidth="139.0" styleClass="submit-button" text="Clear" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              <Button fx:id="loadProvidersR" onAction="#handleLoad" prefHeight="52.0" prefWidth="139.0" styleClass="submit-button" text="Load Providers" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <VBox alignment="TOP_RIGHT" prefHeight="200.0" prefWidth="100.0" spacing="15.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label prefHeight="21.0" prefWidth="58.0" text="First Name" />
+                                    <Label prefHeight="21.0" prefWidth="56.0" text="Last Name" />
+                                    <Label prefHeight="29.0" prefWidth="68.0" text="Date of Birth" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Display Appointments/Billing">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane gridLinesVisible="true" layoutX="-11.0" layoutY="279.0" prefHeight="122.0" prefWidth="507.0" styleClass="custom-grid-pane">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                        </GridPane>
+                        <VBox alignment="TOP_CENTER" prefHeight="206.0" prefWidth="665.0">
+                           <children>
+                              <Label prefHeight="48.0" prefWidth="187.0" text="Print Appointments">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Button fx:id="printPA" mnemonicParsing="false" onAction="#handlePA" prefHeight="30.0" prefWidth="500.0" text="Date/Time/Provider">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="printPL" mnemonicParsing="false" onAction="#handlePL" prefHeight="30.0" prefWidth="500.0" text="Location (County/Date/Time)">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="printPP" mnemonicParsing="false" onAction="#handlePP" prefHeight="30.0" prefWidth="500.0" text="Patients (Date/Time)">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="printPO" mnemonicParsing="false" onAction="#handlePO" prefHeight="30.0" prefWidth="500.0" text="Office Visits Only">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                              <Button fx:id="printPI" mnemonicParsing="false" onAction="#handlePI" prefHeight="30.0" prefWidth="500.0" text="Imaging Service Only">
+                                 <VBox.margin>
+                                    <Insets top="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <GridPane alignment="TOP_CENTER" gridLinesVisible="true" layoutX="-6.0" layoutY="279.0" prefHeight="111.0" prefWidth="673.0" styleClass="custom-grid-pane">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="676.0" minWidth="4.0" prefWidth="503.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="676.0" minWidth="10.0" prefWidth="162.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="178.0" minHeight="10.0" prefHeight="118.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="107.0" prefWidth="487.0">
+                                 <children>
+                                    <Label prefHeight="37.0" prefWidth="225.0" text="Print Billing Statements">
+                                       <font>
+                                          <Font name="System Bold" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox alignment="CENTER" focusTraversable="true" prefHeight="57.0" prefWidth="503.0" spacing="40.0">
+                                       <children>
+                                          <Button fx:id="printPC" onAction="#handlePC" prefHeight="52.0" prefWidth="205.0" styleClass="submit-button" text="Providers" />
+                                          <Button fx:id="printPS" onAction="#handlePS" prefHeight="52.0" prefWidth="205.0" styleClass="submit-button" text="Patients" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="116.0" prefWidth="185.0" GridPane.columnIndex="1">
+                                 <children>
+                                    <Button onAction="#handleClear" prefHeight="52.0" prefWidth="139.0" styleClass="submit-button" text="Clear">
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <VBox.margin>
+                                          <Insets top="20.0" />
+                                       </VBox.margin>
+                                    </Button>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </VBox>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Locations">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="locationTableView" prefHeight="391.0" prefWidth="665.0">
+                           <columns>
+                              <TableColumn fx:id="locationColumn" prefWidth="304.0" text="Location" />
+                              <TableColumn fx:id="countyColumn" minWidth="0.0" prefWidth="221.0" text="County" />
+                              <TableColumn fx:id="zipColumn" prefWidth="139.0" text="Zip" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </top>
+</BorderPane>

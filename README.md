@@ -6,6 +6,7 @@ A JavaFX-based clinic management system for efficiently scheduling, rescheduling
 
 ## Features 🚀
 
+- **🧑 Load Providers**: Easily load the current available providers to be inputted into the system and be assigned to patients.
 - **📅 Schedule Appointments**: Add new appointments by specifying patient details, provider information, and appointment type.
 - **🔄 Reschedule Appointments**: Modify existing appointments to change the date, time, or provider.
 - **❌ Cancel Appointments**: Easily cancel appointments when needed.
